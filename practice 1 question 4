@@ -1,0 +1,79 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Employee {
+    int employeeID;
+    string employeeName;
+    float employeeSalary;
+
+public:
+    void setEmployeeID(int id) {
+        if (id >= 1 && id <= 1000000) {
+            employeeID = id;
+        } else {
+            cout << "Invalid Employee ID." << endl;
+        }
+    }
+
+    int getEmployeeID() const {
+        return employeeID;
+    }
+
+    void setEmployeeName(const string& name) {
+        if (name.length() <= 50) {
+            employeeName = name;
+        } else {
+            cout << "Invalid Employee Name." << endl;
+        }
+    }
+
+    string getEmployeeName() const {
+        return employeeName;
+    }
+
+    void setEmployeeSalary(float salary) {
+        if (salary >= 1.0 && salary <= 10000000.0) {
+            employeeSalary = salary;
+        } else {
+            cout << "Invalid Employee Salary." << endl;
+        }
+    }
+
+    float getEmployeeSalary() const {
+        return employeeSalary;
+    }
+
+    void displayDetails() const {
+        cout << "Employee ID: " << employeeID << endl;
+        cout << "Employee Name: " << employeeName << endl;
+        cout << "Employee Salary: " << employeeSalary << endl;
+    }
+};
+
+int main() {
+    Employee emp;
+
+    int id;
+    string name;
+    float salary;
+
+    cout << "Enter Employee ID: ";
+    cin >> id;
+    cin.ignore(); 
+
+    cout << "Enter Employee Name: ";
+    getline(cin, name);
+
+    cout << "Enter Employee Salary: ";
+    cin >> salary;
+
+    emp.setEmployeeID(id);
+    emp.setEmployeeName(name);
+    emp.setEmployeeSalary(salary);
+
+    cout << endl;
+    emp.displayDetails();
+
+    return 0;
+}
