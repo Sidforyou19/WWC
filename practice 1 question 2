@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+
+int area(int a, int b){
+    return a*b;
+}
+int area(double base, double height){
+    return (0.5*base*height);
+}
+int area(int r){
+    return 3.14*r*r;
+}
+int main(){
+   cout<<"Area of a rectangle :"<<area(5,10)<<endl;
+   cout<<"Area of a triangle :"<<area(5.0,10.0)<<endl; 
+   cout<<"Area of a circle :"<<area(5); 
+}
